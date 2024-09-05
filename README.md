@@ -1,27 +1,21 @@
 # Led-control-using-Arduino
-
 ## AIM
 To design and implement a system for LED control using an Arduino microcontroller and a push button.
 
 ## COMPONENTS REQUIRED
-Arduino </br>
-Led </br>
-Resistance </br>
-Push button </br>
-Bread board </br>
-Jumber wire </br>
+Arduino ,Led ,Resistance ,Push button, Bread board, Jumber wire 
 
 ## PROCEDURE
-Step 1 Connect all the componets as per the circut diagram </br>
-Step 2 Open the Arduino IDE </br>
-Step 3 Go to file and select the new file option </br>
-Step 4 Type the program </br>
-Step 5 Go to file and select save option to save the program </br>
-Step 6 GO to sketch and select verify to compile the program </br>
-Step 7 If no error, Connect the Arduino board to your computer using a USB cable </br>
-Step 8 Select the correct board and port in the Arduino IDE </br>
-Step 8 GO to sketch and select verify to upload the program in the Arduino board </br>
-Step 9 Press the push button and observe the LED's behavior </br>
+Step 1: Connect all the componets as per the circut diagram </br>
+Step 2: Open the Arduino IDE </br>
+Step 3: Go to file and select the new file option </br>
+Step 4: Type the program </br>
+Step 5: Go to file and select save option to save the program </br>
+Step 6: GO to sketch and select verify to compile the program </br>
+Step 7: If no error, Connect the Arduino board to your computer using a USB cable </br>
+Step 8: Select the correct board and port in the Arduino IDE </br>
+Step 9: GO to sketch and select verify to upload the program in the Arduino board </br>
+Step 10: Press the push button and observe the LED's behavior </br>
 
 ## THEORY
 
@@ -58,9 +52,40 @@ Emergency Signaling System </br>
 Weighing Machines </br>
 
 ## CIRCUIT DIAGRAM
+![Screenshot 2024-09-05 102036](https://github.com/user-attachments/assets/fd2d579d-d3ef-4a2e-8bfb-e8c4fc90a63c)
 
 ## PROGRAM
+```C
+const int buttonpin=2;
+const int ledpin=13;
 
+int buttonstate=0;
+
+void setup() {
+  pinMode(ledpin,OUTPUT);
+  pinMode(buttonpin,INPUT);
+
+}
+
+void loop() {
+  buttonstate=digitalRead(buttonpin);
+  if(buttonstate==HIGH)
+  {
+    digitalWrite(ledpin,HIGH);
+  }
+  else
+  {
+    digitalWrite(ledpin,LOW);
+  }
+
+}
+```
 ## OUTPUT
+### LED OFF:
+![Screenshot (152)](https://github.com/user-attachments/assets/96055d42-a91a-49a1-a68c-428feab840df)
+
+### LED ON:
+![Screenshot (153)](https://github.com/user-attachments/assets/7c862fef-0479-4be9-9316-32128421ec49)
 
 ## RESULT
+Thus to design and implement a system for LED control using an Arduino microcontroller and a push button is successfully executed
